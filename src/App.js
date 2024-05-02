@@ -1,8 +1,9 @@
 import './App.css';
 import React from 'react';
-import ExpenseItem from './components/ExpenseItem';
-import Expenses from './components/Expenses';
+import ExpenseItem from './components/Expense/ExpenseItem';
+import Expenses from './components/Expense/Expenses';
 import Hello from './Hello';
+import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
   //지출 항목 객체 배열
@@ -24,16 +25,16 @@ function App() {
     },
   ];
 
+  // ExpenseForm 에게 내려보낼 함수
+  const addExpenseHandler = (newExpense) => {
+    console.log('App 컴포넌트에서 응답함!');
+    console.log(`newExpense: ${newExpense}`);
+  };
+
   return (
     <>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
-      <Hello>
-        <ul>
-          <li>사과</li>
-          <li>포도</li>
-          <li>복숭아</li>
-        </ul>
-      </Hello>
     </>
   );
 }
