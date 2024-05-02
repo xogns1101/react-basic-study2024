@@ -1,25 +1,15 @@
 import React from 'react';
 import ExpenseItem from './ExpenseItem';
 import './Expenses.css';
-const Expenses = ({ items: expenses }) => {
+const Expenses = ({ items}) => {
+  
+  // ExpenseItem을 동적으로 렌더링하기.
+  const iterateExpenseItem = () => {
+    return items
+  }
   return (
-    <div>
-      <ExpenseItem
-        title={expenses[0].title}
-        price={expenses[0].price}
-        date={expenses[0].date}
-      />
-      <ExpenseItem
-        title={expenses[1].title}
-        price={expenses[1].price}
-        date={expenses[1].date}
-      />
-      <ExpenseItem
-        title={expenses[2].title}
-        price={expenses[2].price}
-        date={expenses[2].date}
-      />
-    </div>
+    
+    
   );
 };
 
