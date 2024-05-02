@@ -1,8 +1,6 @@
 import './App.css';
 import React from 'react';
-import ExpenseItem from './components/Expense/ExpenseItem';
 import Expenses from './components/Expense/Expenses';
-import Hello from './Hello';
 import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
@@ -25,10 +23,10 @@ function App() {
     },
   ];
 
-  // ExpenseForm 에게 내려보낼 함수
+  // ExpenseForm에게 내려보낼 함수
   const addExpenseHandler = (newExpense) => {
     console.log('App 컴포넌트에서 응답함!');
-    console.log(`newExpense: ${newExpense}`);
+    console.log('newExpense: ', newExpense);
   };
 
   return (
