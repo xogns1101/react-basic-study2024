@@ -38,7 +38,7 @@ const ExpenseForm = ({ onSaveExpense }) => {
 
     const newExpense = {
       title: userInput.title,
-      price: userInput.price,
+      price: +userInput.price,
       date: new Date(userInput.date),
     };
 
@@ -51,6 +51,8 @@ const ExpenseForm = ({ onSaveExpense }) => {
       date: '',
     });
   };
+
+  const cancelInsertHandler = () => ontoggle();
 
   return (
     <form onSubmit={formSubmitHandler}>
@@ -85,6 +87,9 @@ const ExpenseForm = ({ onSaveExpense }) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={cancelInsertHandler}>
+          Cancle
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
