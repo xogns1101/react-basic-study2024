@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = ({ onSaveExpense }) => {
+const ExpenseForm = ({ onSaveExpense, onToggle }) => {
   const [userInput, setUserInput] = useState({
     title: '',
     price: '',
@@ -52,7 +52,7 @@ const ExpenseForm = ({ onSaveExpense }) => {
     });
   };
 
-  const cancelInsertHandler = () => ontoggle();
+  const cancelInsertHandler = () => onToggle();
 
   return (
     <form onSubmit={formSubmitHandler}>
@@ -88,7 +88,7 @@ const ExpenseForm = ({ onSaveExpense }) => {
       </div>
       <div className="new-expense__actions">
         <button type="button" onClick={cancelInsertHandler}>
-          Cancle
+          Cancel
         </button>
         <button type="submit">Add Expense</button>
       </div>
