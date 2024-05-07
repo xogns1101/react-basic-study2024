@@ -3,7 +3,7 @@ import Card from '../../UI/Card';
 import styles from './Login.module.css';
 import Button from '../../UI/Button/Button';
 import AuthContext from '../../store/auth-context';
-import Input from '../../UI/Input/Input';
+import Input from '../../UI/Input/input';
 
 // 리듀서 함수 선언
 /*
