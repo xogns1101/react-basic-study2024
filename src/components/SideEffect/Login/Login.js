@@ -1,9 +1,14 @@
-import React, { useContext, useEffect, useReducer, useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from 'react';
 import Card from '../../UI/Card';
 import styles from './Login.module.css';
 import Button from '../../UI/Button/Button';
 import AuthContext from '../../store/auth-context';
-import Input from '../../UI/Input/input';
+import Input from '../../UI/Input/Input.js';
 
 // 리듀서 함수 선언
 /*
@@ -53,15 +58,21 @@ const Login = () => {
     return1 - 이메일 관련 상태변수
     return2 - dispatch함수: 상태를 변경할 수 있는 함수
   */
-  const [emailState, dispatchEmail] = useReducer(emailReducer, {
-    value: '',
-    isValid: null,
-  });
+  const [emailState, dispatchEmail] = useReducer(
+    emailReducer,
+    {
+      value: '',
+      isValid: null,
+    },
+  );
 
-  const [pwState, dispatchPw] = useReducer(passwordReducer, {
-    value: '',
-    isValid: null,
-  });
+  const [pwState, dispatchPw] = useReducer(
+    passwordReducer,
+    {
+      value: '',
+      isValid: null,
+    },
+  );
 
   // 이메일, 패스워드가 둘 다 동시에 정상적인 상태인지 확인
   const [formIsValid, setFormIsValid] = useState(false);
@@ -156,7 +167,11 @@ const Login = () => {
           />
         </div>
         <div className={styles.actions}>
-          <Button type="submit" className={styles.btn} disabled={!formIsValid}>
+          <Button
+            type="submit"
+            className={styles.btn}
+            disabled={!formIsValid}
+          >
             Login
           </Button>
         </div>
