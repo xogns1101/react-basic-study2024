@@ -19,7 +19,7 @@ const DUMMY_CART = [
   },
 ];
 
-const Cart = () => {
+const Cart = ({ onClose }) => {
   const {
     'cart-items': cartItemStyle,
     total,
@@ -31,8 +31,8 @@ const Cart = () => {
   const { items, totalPrice } = useContext(CartContext);
 
   return (
-    <CartModal>
-      {/* 주문내역(카트 안의 음식 내역) */}
+    <CartModal onClose={onClose}>
+      {/* 주문 내역(카트 안의 음식 내역) */}
       <ul className={cartItemStyle}>
         {items.map((cartItem) => {
           return (
@@ -50,8 +50,12 @@ const Cart = () => {
         </span>
       </div>
       <div className={actions}>
-        <button className={btnAlt}>닫기</button>
-        <button className={button}>주문</button>
+        <button className={btnAlt} onClick={onClose}>
+          닫기
+        </button>
+        {items.length > 0 && (
+          <button className={button}>주문</button>
+        )}
       </div>
     </CartModal>
   );
